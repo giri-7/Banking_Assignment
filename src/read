@@ -1,0 +1,162 @@
+
+
+1->axios
+
+<!-- npm i --save axios
+ -->
+download axios 
+import axios 
+
+used to call api (get,put,delete,post)
+
+
+2->developer tools in f12 console
+
+
+3->  router
+
+download router and router dom first
+
+
+<!-- npm install --save react-router
+npm install --save react-router-dom -->
+
+
+then import route in new file that is routes.js
+then import route.js in app.js
+then add a button in app.js then define its function
+<!-- sendNavigation(){
+  this.props.history.push('/dummy');
+} -->
+
+before this you need to set route path in navigation.js A.K.A router.js
+
+<!--    import React, {Component} from 'react';
+import {Route} from 'react-router';
+import {BrowserRouter,Switch,HashRouter} from 'react-router-dom';
+import App from './App.js';
+import Dummy from './dummy';
+
+
+export default class Navigation  extends Component{
+  render(){
+    return(
+                <BrowserRouter>
+                    <Switch>
+                          <Route exact path='/' component={App}/>
+                          <Route exact path='/home' component={App}/>
+                          <Route exact path='/dummy' component={Dummy}/>
+
+                     </Switch>
+                </BrowserRouter>     
+      );
+  }
+}
+          -->
+
+add this in case any error in router.js
+<!-- import {withRouter} from 'react-router-dom'; -->
+
+
+and this also for any error that occurs in router.js 
+
+<!--     export default withRouter(App); -->
+
+
+                              reduxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+
+                              redux concept
+
+
+<!-- import reducers from './reducers';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+ -->
+
+{{{{{{{{{{{{{{{{{{{{index for redux}}}}}}}}}}}}}}}}}}}}}}
+<!--  import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import App from './App';
+import reducers from './reducers';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+
+const middleware = applyMiddleware(logger, thunk);
+
+const createStoreWithMiddleware = (createStore(reducers, middleware));
+
+ReactDOM.render(
+<Provider store={createStoreWithMiddleware}>
+  <App />
+</Provider>
+, document.getElementById('root')); -->
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxapp for reduxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+<!-- 
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {setUserData} from './actions/index';
+import axios from 'axios'; -->
+
+logic...
+
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({setUserData: setUserData}, dispatch);
+}
+
+function mapStateToProps(params){
+  return {
+      getUser: params.userLock.userDetails
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxReducer indexxxxxxxxxxxxxxxxxxxxxxxxx
+
+import {combineReducers} from "redux";
+import userReducers from "./userReducers.js";
+const rootReducer = combineReducers({
+  userLock: userReducers
+});
+
+export default rootReducer;
+
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxexample actionxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+export function setUserData(data){
+  console.log(data);
+  return {type: "ADD_USER_DATA", payload: data};
+}
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxexample reducerxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+const userReducers = (state = {user: [], name: "", arr2: [], obj: {}}, action) => {
+  console.log(action);
+  switch(action.type){
+    case "ADD_USER_DATA":
+    return {user: [...state.user.concat(action.payload)]};
+    break;
+    default:
+    return state;
+  }
+}
+
+export default userReducers;
+
+
