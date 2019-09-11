@@ -72,11 +72,21 @@ Method to use :
 Once the app gets loaded in the web browser
 
 1.Please provide the loan amount in the respective area or else use the slider to choose the loan amount.
+
+
 2.Please select the duration (in months) between 6 to 24 months.
+
+
 3.Then the application loads to give the rate of interest and monthly payment for the respective loan amount and duration.
+
+
 4.Please click submit to add the Loan Details in the loan history side bar.
+
+
 5.To clear the data in your local storage Goto —-> site settings —-> Clear Cache 
        this will remove the old loan history. (which is present in your local browser)
+       
+       
 6.    Use the interface to calculate the loan details again.
 
 ——————————————-THANK YOU———————————————————   
