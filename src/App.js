@@ -109,20 +109,18 @@ class App extends Component {
           <nav className={(toggleSidebar === true) ? "sideMenuCls" : "collapseSideBar" }>
             <SideBar getBacktoLoan={this.showDetails.bind(this)} />
           </nav>
-           
           <div className="content">
             <div>
-
               <button type="button" onClick={this.toggleSideBar.bind(this)} className="btn sidebarCollapse" style={{color: "#138496", background: "none"}}>
-                    <i className="fas fa-align-left"></i>
-                    <span>☰</span>
+                <i className="fas fa-align-left"></i>
+                <span>☰</span>
               </button>
               <div className="navBarSection p-2">
               <h1 className="text-center mb-5">Loan Calculator</h1>
                 <form className="container" onSubmit={this.saveLoanAmount.bind(this)}>
-                     <div className="form-group row">
-                        <label htmlFor="loanAmount" className="col-12 col-sm-3 col-md-3 col-lg-3">Loan Amount</label>
-                        <input type="number"
+                  <div className="form-group row">
+                      <label htmlFor="loanAmount" className="col-12 col-sm-3 col-md-3 col-lg-3">Loan Amount</label>
+                      <input type="number"
                           value={this.state.loanDetails.loanAmount}
                           onChange={this.handleChange.bind(this, 'loanAmount')}
                           className="form-control col-12 col-sm-5 col-md-5 col-lg-5"
@@ -141,7 +139,7 @@ class App extends Component {
                       </div>
 
                       <div className="form-group row">
-                          <label htmlFor="loanDuration" className="col-12 col-sm-3 col-md-3 col-lg-3">Loan Duration</label>
+                        <label htmlFor="loanDuration" className="col-12 col-sm-3 col-md-3 col-lg-3">Loan Duration</label>
                         <div className="col-12 col-sm-5 col-md-5 col-lg-5 p-0">
                           <input type="number"
                               value={this.state.loanDetails.loanDuration}
@@ -157,9 +155,9 @@ class App extends Component {
                       <div className="form-group row">
                         <label htmlFor="interestRates" className="col-12 col-sm-3 col-md-3 col-lg-3">Interest Rates</label>
                         <label className="form-control col-12 col-sm-5 col-md-5 col-lg-5">{(this.state.intrestPay === "") ? <Loader type="Circles" color="#e3e3e3" height={30} width={30}/> : this.state.intrestPay  }</label>
-                      <div className="col-12 col-sm-4 col-md-4 col-lg-4">
-                        <span className="output">Intrest of Pay</span>
-                      </div>
+                        <div className="col-12 col-sm-4 col-md-4 col-lg-4">
+                          <span className="output">Intrest of Pay</span>
+                        </div>
                       </div>
                       <div className="form-group row">
                         <label htmlFor="monthlyPayment" className="col-12 col-sm-3 col-md-3 col-lg-3">Monthly Payment</label>
