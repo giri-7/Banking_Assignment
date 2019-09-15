@@ -1,4 +1,4 @@
-# Banking_Assignment
+# Banking
 Simple loan calculator
 
 Name:
